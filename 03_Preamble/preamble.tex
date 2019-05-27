@@ -1,0 +1,346 @@
+\documentclass[11pt,Danish,a4paper,oneside,openright,final]{memoir} 
+%% Memoir are using an emulation of the ccaption package
+%% so to use the caption package without warnings we first
+%% DisEmulate the ccaption package after it have been loaded
+%% and then call the package we want to use.
+%% For more information, check the documentation
+%% https://www.ctan.org/pkg/memoir?lang=en
+\RequireAtEndPackage{ccaption}{\DisemulatePackage{ccaption}}
+\RequireAtEndPackage{ccaption}{\usepackage{caption}}
+\usepackage[danish]{babel}
+\usepackage[T1]{fontenc}			% inkluder dansk i overskrifter
+\usepackage[utf8]{inputenc}	% inkluder dansk i overskrifter
+\usepackage[table,xcdraw,pdftex,dvipsnames]{xcolor}
+\usepackage[hidelinks=true]{hyperref}
+
+\setlength{\parindent}{0pt}
+\nonzeroparskip
+
+%% Memoir commands for changeing whitespace before and after 
+%% sec, subsec, subsubsec, para or subpara. Replace "S" with 
+%% the thing you want to change the whitespace for 
+%%(see documentation section 6.6)
+%\setbeforeSskip{ <skip> }
+%\setafterSskip{ <skip> }
+
+\usepackage{xargs}                      % Use more than one optional parameter in a new commands
+\usepackage{booktabs}
+\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+\newcommandx{\store}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
+\newcommandx{\jonathan}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
+\newcommandx{\thomas}[2][1=]{\todo[linecolor=green,backgroundcolor=green!25,bordercolor=green,#1]{#2}}
+\newcommandx{\tobycat}[2][1=]{\todo[linecolor=cyan,backgroundcolor=cyan!25,bordercolor=cyan,#1]{#2}}
+\newcommandx{\mini}[2][1=]{\todo[linecolor=violet,backgroundcolor=violet!25,bordercolor=violet,#1]{#2}}
+\newcommandx{\florent}[2][1=]{\todo[linecolor=magenta,backgroundcolor=magenta!25,bordercolor=magenta,#1]{#2}}
+\newcommandx{\valdemar}[2][1=]{\todo[linecolor=orange,backgroundcolor=orange!25,bordercolor=orange,#1]{#2}}
+
+
+\usepackage{listings}
+\usepackage{url}
+\usepackage{lmodern}
+\usepackage{varioref} %% \vref gives you references including pages
+\usepackage[fleqn]{amsmath} %
+\usepackage[fleqn]{mathtools}				% Andre matematik- og tegnudvidelser
+\usepackage[version=3]{mhchem} 				% Kemi-pakke til flot og let notation af formler, f.eks. \ce{Fe2O3}
+\usepackage{siunitx}						% Flot og konsistent praesentation af tal og enheder med \si{enhed} og \SI{tal}{enhed}
+%\sisetup{locale=DE}							% Opsaetning af \SI (DE for komma som decimalseparator)
+\usepackage[utf8]{inputenc}	
+\usepackage{pdfpages}			% G�r det muligt at inkludere pdf-dokumenter med kommandoen \includepdf[pages=]{fil.pdf}	
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{color} %% Colored text
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsopn}
+\usepackage{latexsym}
+\usepackage{amstext}
+\usepackage{longtable} %% tables that spans multiple pages
+\usepackage{mathrsfs} %% nice math text/symbols
+
+\usepackage{color}
+ 
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{lightgray}{rgb}{0.95,0.95,0.95}
+
+% When including these 3 lines, it now enumerates with C.S.L where C is chapter number, S is section number and L is list number
+\usepackage{enumitem}
+\setenumerate[1]{label=\thesection.\arabic*}
+\setenumerate[2]{label*=\arabic*}
+% It is now also possible to continue numbering by using \begin{enumerate}[resume]
+
+\makeatletter
+\renewcommand*\env@matrix[1][*\c@MaxMatrixCols c]{%
+  \hskip -\arraycolsep
+  \let\@ifnextchar\new@ifnextchar
+  \array{#1}}
+\makeatother
+
+%
+\setheaderspaces{*}{5\onelineskip}{*}
+\makepagestyle{sitin}
+
+% Margin
+\setlrmarginsandblock{*}{3.5cm}{0.75} % højre og venstre
+\setulmarginsandblock{3cm}{*}{0.75}    % top og bund
+\checkandfixthelayout[nearest]        % specifikt valg af højde algoritme
+\renewcommand{\marginparwidth}{75pt}
+
+\makeoddhead{sitin}
+	%Left
+	{
+	    Gruppe 12
+	}
+	%Center
+	{
+		\small\rightmark
+	}
+	%Right
+	{
+	    \includegraphics[height=4\onelineskip]{03_Preamble/LargeAULogo.png}
+	}
+
+\makeevenhead{sitin}
+	%Left
+	{
+		\includegraphics[height=4\onelineskip]{LargeAULogo.png}
+	}
+	%Center
+	{
+		\small\leftmark 
+	}
+	%Right
+	{
+	    Gruppe 12
+	}
+	
+\makeoddfoot{sitin}{}{}{\thepage}
+\makeevenfoot{sitin}{}{}{\thepage}
+
+\makeheadrule{sitin}{\textwidth}{.4pt}
+\makefootrule{sitin}{\textwidth}{.4pt}{0.1cm}
+
+\pagestyle{sitin}
+
+
+
+%\usepackage[dvipsnames]{xcolor}
+%\newcommand\tab[1][1cm]{\hspace*{#1}}
+\usepackage[T1]{fontenc}
+\usepackage{afterpage}
+\usepackage{siunitx}
+\usepackage{transparent}
+\usepackage{hyperref}
+%\usepackage[backend=bibtex,style=numeric,bibencoding=ascii
+%style=alphabetic
+%style=reading]{biblatex}
+%\usepackage[
+%singlelinecheck=false % <-- important
+%]{caption}
+
+% Change chapter pages
+\copypagestyle{chapter}{plain}
+\makeoddfoot{chapter}{}{}{\small\thepage}
+\makeevenfoot{chapter}{\small\thepage}{}{}
+\makefootrule{chapter}{\textwidth}{\normalrulethickness}{\footruleskip}
+
+
+%
+% Section titles
+%
+\settocdepth{paragraph}
+\setsecnumdepth{paragraph}
+\maxsecnumdepth{paragraph}
+\setsecheadstyle{\Large\bfseries\sffamily\raggedright}
+\setsubsecheadstyle{\large\bfseries\sffamily\raggedright}
+\setsubsubsecheadstyle{\normalsize\bfseries\sffamily\raggedright}
+\raggedbottomsectiontrue
+
+%
+% Table of Contents
+%
+\renewcommand{\contentsname}{Table of Contents}
+\makeatletter
+\setlength{\cftpartnumwidth}{2em}% Set length of number width in ToC for \part
+\setlength{\cftchapternumwidth}{2em}% Set length of number width in ToC for \chapter
+\setlength{\cftsectionnumwidth}{3em}% Set length of number width in ToC for \section
+\setlength{\cftsubsectionnumwidth}{4em}% Set length of number width in ToC for \subsection
+\setlength{\cftsubsubsectionnumwidth}{5em}% Set length of number width in ToC for \subsection
+%\setlength{\cftparagrnumwidth}{5em}% Set length of number width in ToC for \subsection
+\makeatother
+
+
+\usepackage{calc}
+
+% Define a new chapter style
+\makeatletter
+\makechapterstyle{worksheet}{
+	%% Memoir commands for changeing whitespace before and after 
+	%% chapter. Note that the outcommented values are the defaults
+	%% \setlength{\beforechapskip}{50pt}
+	%% \setlength{\afterchapskip}{40pt}
+	\setlength{\beforechapskip}{1ex}
+	\setlength{\midchapskip}{0pt}
+	\setlength{\afterchapskip}{1ex}
+ 	\newcommand{\chapterrule}{\rule[.2\baselineskip]{\textwidth}{1pt}}
+  	\renewcommand\chapnamefont{\Large\sffamily}
+  	\renewcommand\chapnumfont{\Large\sffamily\centering}
+  	\renewcommand\chaptitlefont{\huge\bfseries\sffamily\centering}
+  	\renewcommand\printchaptertitle[1]{%
+    \chaptitlefont
+    	\ifdim\@tempdimc > 0pt\relax% one line
+      		\chapterrule \\
+      		##1
+      		\chapterrule
+    	\else% two+ lines
+        	>{\chaptitlefont\arraybackslash}p{\textwidth-2\tabcolsep}
+     		\chapterrule \\
+      		\phantomsection
+      		\addtocontents{toc}{\protect\contentsline{chapter}{\protect\numberline{}##1}{}{chapter*.\thepage}}
+      		##1
+      		\chapterrule
+    	\fi
+	}
+}
+\makeatother
+\chapterstyle{worksheet}
+
+\usepackage{acronym}
+\usepackage{nicefrac}
+\usepackage{placeins}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{rotating}
+\usepackage{float}
+\usepackage{epstopdf} % allows to use eps files in figures
+\epstopdfsetup{outdir=./epstopdf/}
+\newcommand{\matt}[1]{\bar{\mathbf{#1}}} % Laver Matrix notation med dobbelt overline og fed skrift
+\input{03_Preamble/commands.tex}
+
+% The framed package is used in the example environment
+\usepackage{framed}
+% Show the frame of the page segments for placements
+%\usepackage{showframe}
+% Count chapters, makes it possible to autoupdate number of appendices
+\usepackage{totcount}
+
+% To make different kinds of diagrams
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{schemabloc} % Documentation only in French 
+						% https://www.ctan.org/pkg/schemabloc
+\usepackage{blox}		% Does the same as  the schemabloc package, but
+						% documentation is in English 
+						%https://www.ctan.org/pkg/blox
+\usetikzlibrary{circuits}
+\usetikzlibrary{positioning}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% IF YOU NEED A PACKAGE, PUT UNDER THIS %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{tabto}
+\usepackage{textcomp}
+\usepackage{upgreek}
+\usepackage{mathptmx}
+\usepackage{array}
+%\usepackage[
+ % disable, %turn off todonotes
+  %colorinlistoftodos, %enable a coloured square in the list of %todos
+  %textwidth=\marginparwidth, %set the width of the todonotes
+  %textsize=scriptsize, %size of the text in the todonotes
+  %]{todonotes}
+\usepackage[colorinlistoftodos]{todonotes}
+
+\usepackage{circuitikz}%enables electriacls curcits in tikz
+%\usepackage{slashbox} % So two different things can be written in a box i an table
+\usepackage{diagbox} % modern version of slashbox
+\usepackage{cancel} %the ability to strikeout in equations
+
+\usepackage{arydshln} % Dashed hline within table enviroment
+
+% Used to make flowchart (ran out of blocks in lucidchart)
+\usetikzlibrary{shapes.geometric, arrows}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% IF YOU NEED A PACKAGE, PUT ABOVE THIS %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bibliography
+% http://en.wikibooks.org/wiki/LaTeX/Bibliography_Management
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[square,numbers]{natbib}
+% Add the \citep{key} command which display a
+% reference as [author, year]
+%\usepackage[authoryear]{natbib}
+%\setcitestyle{round,nonamebreak}
+%\bibpunct{(}{)}{;}{a}{}{,}
+% Appearance of the bibliography
+\bibliographystyle{IEEEtran}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% THIS MUST BE THE LAST THING %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \usepackage[hidelinks,breaklinks]{hyperref}
+% \hypersetup{
+% 	pdfpagelabels=true,%
+% 	plainpages=false,%
+% 	pdfauthor={gruppe 12,
+%                 3. semester,
+%                 AU,
+%                 Aarhus,
+%                 Denmark},%
+% 	pdftitle={Drink master},%
+% 	pdfsubject={Drink master},%
+% 	bookmarksnumbered=true,%
+% 	colorlinks=false,%
+% 	pdfstartview=FitH,%
+% 	pdfduplex=DuplexFlipLongEdge,
+% 	pdfkeywords={gruppe 12,
+%                 Aarhus,
+%                 AU,
+%               },
+% 	breaklinks
+% }
+
+\usepackage{minted}
+\definecolor{LightGray}{gray}{0.9}
+\definecolor{bluekeywords}{rgb}{0,0,1}
+\definecolor{greencomments}{rgb}{0,0.5,0}
+\definecolor{redstrings}{rgb}{0.64,0.08,0.08}
+\definecolor{xmlcomments}{rgb}{0.5,0.5,0.5}
+\definecolor{types}{rgb}{0.17,0.57,0.68}
+
+\usepackage{listings}
+\lstset{language=C++,
+captionpos=b,
+%numbers=left, %Nummerierung
+%numberstyle=\tiny, % kleine Zeilennummern
+frame=lines, % Oberhalb und unterhalb des Listings ist eine Linie
+showspaces=false,
+showtabs=false,
+breaklines=true,
+showstringspaces=false,
+breakatwhitespace=true,
+escapeinside={(*@}{@*)},
+commentstyle=\color{greencomments},
+morekeywords={char, void, var, value, get, set,DrinkMachineClient},
+keywordstyle=\color{bluekeywords},
+stringstyle=\color{redstrings},
+basicstyle=\ttfamily\small,
+}
+
+\lstdefinelanguage{Gherkin}{
+  keywords={Naar, Saa, Givet, Og},
+  ndkeywords={Egenskab, Baggrund, Scenarie},
+  sensitive=false,
+  comment=[l]{\#},
+  morestring=[b]',
+  morestring=[b]"
+}
+
+\usepackage{memhfixc} %% Include this package after hyperref when using memoir

@@ -1,0 +1,17 @@
+\section{Planning}
+I dette afsnit beskrives design og implementeringen for planning widget. Til dette tages der udgangspunkt i det udarbejdet arkitektur fra afsnit \ref{sec:Planning_arkitektur}, samt US's for planning. I bilag\cite{DesignOgImplPlanning} er der udarbejdet funktionsbeskrivelser, som design til planningControlleren. Funktionsbeskrivelserne tager udgangspunkt i figur \ref{fig:ark_planning_logic_classdiagram} fra arkitekturen. Ud over dette er design for models også udarbejdet i bilag, og tager udgangspunkt i ER-diagrammet på figur \ref{fig:ark_planning_data_dbview}, samt de forklarende overvejelser. En mere detaljeret beskrivelse kan findes i bilag \cite{DesignOgImplPlanning}. \\
+
+\noindent Rækkefølgen af design og impelemteringen for planning, kan ses på figur \ref{fig:planning_iterations}.
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{10_Design_og_implementering/Planning/pictures/iterationer.jpg}
+  \centering
+  \caption{Illustration af hvordan udviklingen af planning er sket i de forskellige iterationer. Iterationerne her angiver iterationen af udviklingen af hele hjemmesiden, og starter derfor ikke ved 1. 5. Itration er CRUD, hvorefter 6. er til edit shift og bytning af vagter.}
+  \label{fig:planning_iterations}
+\end{figure}
+
+\subsection{5. iteration}
+5. iteration bestod i at lave lægge et grundlag for planning. Hertil blev US designet og implementeret iterativt, altså en ad gangen. Det første, som blev implementeret for hver US i iterationen var models, som så tog udgangspunkt i det i forvejen oprettet ER-diagram. Dette er mere detaljeret forklaret i bilag \cite{DesignOgImplPlanning}. Når så models var oprettet, som den første US havde brug for, så kunne controllers metoder og passende view implementeres. Hertil blev code-first benyttet, hvorefter design for funktionerne blev dokumenteret. På dette tidspunkt, var det passende at kode før dokumentation grundet manglende erfaring med strukturen og asp.net. Code-first gjorde det muligt, at opbygge en smule erfaring med metoderne, som MVC strukturen i asp.net benytter, samt brugen af EF-core og DAL. Code-first var med til, at sikre hurtigere forståelse for implementeringen, så man ikke ville sidde fast i et dårligt design, som ikke ville fungere, pga. mangelnde erfaring. 
+
+\subsection{6. iteration}
+6. iteration bestod i at rette småfejl fra 5. iterations implementering, samt at udarbejde design for metoderne. Derudover, skulle bytning og redigering af vagter, designes og implementeres. Code-first blev igen benyttet her. 

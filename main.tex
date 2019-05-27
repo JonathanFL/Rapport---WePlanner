@@ -1,0 +1,40 @@
+\input{03_Preamble/preamble.tex}
+\usepackage{rotating}
+\usepackage[utf8]{inputenc}
+\usepackage[table,xcdraw,pdftex,dvipsnames]{xcolor}
+\usepackage{graphicx}
+\usepackage{placeins}
+\TabPositions{4cm, 6cm, 8cm}
+
+\begin{document}
+\includepdf[pages=1]{02_Frontmatter/Frontpage1.pdf}
+
+\frontmatter
+\newpage
+\input{02_Frontmatter/abstract}
+\input{02_Frontmatter/acro}
+\input{02_Frontmatter/forord}
+\input{02_Frontmatter/Uddellegering.tex}
+\cleardoublepage
+\tableofcontents*
+\listoftodos[Todo]
+\mainmatter
+\input{04_Indledning/Indledning.tex}
+\part{Specifikationer}
+\input{05_Kravspek/Kravspec.tex}
+\input{07_Metode_og_Proces/Metode_Og_Proces.tex}
+\input{08_Analyse/Analyse.tex}
+\part{Arkitektur, design \& implementering}
+\input{09_Arkitektur/Arkitektur.tex}
+\input{10_Design_og_implementering/Design_og_implementering.tex}
+
+\part{ Test \& resultater}
+\input{11_test_og_resultater/Test_og_resultater.tex}
+
+\part{Diskussion \& konklusion}
+\input{12_Diskussion/Diskussion.tex}
+\input{13_Konklusion/Konklusion.tex}
+
+\part{Kilder}
+\bibliography{kilder}
+\end{document}

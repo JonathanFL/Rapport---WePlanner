@@ -1,0 +1,126 @@
+\section{User stories} \label{sec:US}
+For at definere nærmere, hvilke funktioner applikationen og dens widgets skal indeholde, udarbejdes en user-story for hver funktion, som en bruger/administrator eller owner skal kunne udføre. Gruperingen af disse US's tager udgangspunkt i kravene i MoSCoW analysen.
+% På denne måde sættes funktionerne i perspektiv i forhold til resten af applikationen. 
+US's gør desuden, at der ikke fastlægges specifikke design-beslutninger allerede i en US, men i stedet udvikler disse iterativt under design- og implementerings- fasen.
+\\ \\
+\noindent I rapporten gennemgås detaljeret arkitektur, design og implementering for 5 udvalgte US's. Arkitektur, design og implementering for de resterende US's gennemgås overordnet. En oversigt over de forskellige US's kan ses på tabel \ref{tab:US_tabel}. Den fulde version af de US's der udvælges er medtaget, hvor kun overskriften for de resterende US's vises. De US's der er understreget, er de 5 US's der gennemgås i rapporten. Den fulde beskrivelse af alle US's kan findes i bilag i afnsittet omkring US's. En uddybende forklaring af US's der beskrives i rapporten kan ses på tabel \ref{tab:US_rep}.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{p{2.5in}p{2.5in}}
+    \textbf{Gruppe indstillinger}
+    \newline\tabitem Valg af tema, baggrund og gruppenavn
+    \newline\tabitem Tilføjelse/fjernelse af brugere
+    \newline\tabitem \underline{Tilføje/fjerne administrator rettigheder}
+    \newline\tabitem Mulighed for at forlade gruppe
+    \newline\tabitem Mulighed for at slette gruppe
+    \newline\tabitem Tilføje/fravælge notifikationer
+    \newline\tabitem Mulighed for at tilføje kælenavne til 
+    \newline\hspace*{0.1cm} medlemmer
+    \newline\tabitem \underline{Tilføj widget}
+    \newline\tabitem Fjern widget
+    \newline\tabitem Mulighed for at videregive owner-
+    \newline\hspace*{0.1cm} rettigheder
+    \newline \newline
+    \textbf{Betalinger}
+    \newline\tabitem Tilføj/fjern betaling
+    \newline\tabitem Tilføj/fjern udgift
+    \newline\tabitem Tilføj/fravælg betalere
+    \newline\tabitem Valg af opdeling
+    \newline\tabitem Accepter betaling
+    \newline\tabitem Marker betalt
+    \newline\tabitem Tilføj betalingsdato
+    \newline \newline
+    \textbf{Kalender}
+    \newline\tabitem Tilføj/fjern begivenheder
+    \newline\tabitem Valg af filter
+    \newline\tabitem Skift mode (fælles/personlig)
+    \newline\tabitem Valg af visning
+    \newline\tabitem Mulighed for synkronisering med 
+    \newline\hspace*{0.1cm} Google Calendar
+    \newline \newline
+    \textbf{Liste}
+    \newline\tabitem Afkrydsning/fjern afkrydsning af liste-
+    \newline\hspace*{0.1cm} elementer
+    \newline\tabitem Tilføj/slet liste elementer
+    \newline\tabitem Tilføj \& rediger titel
+    \newline\tabitem Slet alle afkrydsede listeelementer
+&  
+
+\textbf{Bruger indstillinger}
+    \newline\tabitem Opret bruger
+    \newline\tabitem Log Ind
+    \newline\tabitem Indstil profilbillede og personligt tema
+    \newline\tabitem Ændring af navn, password og e-mail
+    \newline\tabitem Tilkny Facebook konto
+    \newline \newline
+    \textbf{Booking}
+    \newline\tabitem \underline{Tilføj ressource}
+    \newline \tabitem \underline{Fjern/redigér ressource}
+    \newline\tabitem Tilføj/fjern/redigér reservation af 
+    \newline\hspace*{0.1cm} ressource
+    \newline\tabitem Overblik i kalenderform
+    \newline\tabitem \underline{Mulighed for automatisk gentagende reservations}
+    \newline\tabitem Synkronisering med kalender
+    \newline\tabitem Muligt at vælge max antal reservatioer 
+    \newline\hspace*{0.1cm}pr. periode pr. person, for en ressource.
+    \newline \newline
+    \textbf{Pinned Events}
+    \newline\tabitem Vælg begivenhed fra kalenderen
+    \newline \newline
+    \textbf{Opslagstavle}
+    \newline\tabitem Tilføj opslag
+    \newline\tabitem Fjern opslag
+    \newline\tabitem Tilføj/fjern gruppe
+    \newline\tabitem Rediger opslag
+    \newline \newline
+    \textbf{Planlægning}
+    \newline\tabitem Tilføjelse/fjernelse af vagter
+    \newline\tabitem Bytning af vagter
+    \newline\tabitem Automatisk generering af vagter
+    \newline\tabitem Tilføjelse og fjernelse af medlemmer
+    \newline\tabitem Tilføje beskrivelse
+    \newline\tabitem Tilføjelse af titel
+    \newline\tabitem Valg af antal medlemmer pr. vagt
+    \newline\tabitem Redigering af vagt-tidspunkt
+    \newline\tabitem Valg af template
+    \newline\tabitem Synkronisering med kalender
+\\\\
+\end{tabular}
+\caption{Tabel over US's i Weplanner. Overskrifter markeret med fed indikerer en gruppering af US's. Understregede US's, er de US's som gennemgås i rapporten.}
+\label{tab:US_tabel}
+\end{table}
+
+\subsection{US's som der gennemgås i rapporten}
+
+\begin{table}[H]
+\begin{tabular}{p{2.5in}p{2.5in}}
+\textbf{\underline{Tilføje/fjerne administrator rettigheder}}\newline \textbf{Som} owner\newline \textbf{Vil jeg} gerne kunne tilføje eller fjerne administrator rettigheder til gruppens medlemmer,\newline \textbf{For at} jeg kan kontrollere hvem der har adgang til administrator-funktioner.
+\newline
+\newline
+\textbf{\underline{Tilføj ressource}}\newline \textbf{Som} bruger\newline \textbf{Vil jeg} gerne kunne tilføje ressourcer\newline \textbf{For at} der kan tilføjes en ressource som kan reserveres af gruppens medlemmer.
+\newline
+\newline
+\textbf{\underline{Mulighed for automatisk gentagende}}
+\textbf{\underline{reservationer}}
+\newline \textbf{Som} bruger
+\newline \textbf{Vil jeg} kunne vælge automatisk gentagende reservationer
+\newline \textbf{For at} gøre det nemmere at lave flere reservationer med bestemte intervaller.
+& 
+\textbf{\underline{Tilføj widget}}\newline \textbf{Som} bruger\newline \textbf{Vil jeg} gerne have mulighed for at tilføje widgets på gruppens side\newline \textbf{For at} jeg kan administrere indholdet på gruppens side og den kan tilpasses til gruppens behov.
+\newline
+\newline
+\textbf{\underline{Fjern/redigér ressource}}\newline \textbf{Som} administrator\newline \textbf{Vil jeg} gerne kunne fjerne eller redigere ressourcer\newline \textbf{For at} ressourcer kan opdateres, eller fjerne ressourcer som ikke længere kan benyttes. \\\\
+\end{tabular}
+\caption{Tabel indholdende de 5 US's som der fokuseres på i rapporten}
+\label{tab:US_rep}
+\end{table}
+
+
+
+
+
+
+
+
+

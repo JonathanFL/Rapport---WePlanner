@@ -1,0 +1,13 @@
+\subsection{Data view}
+
+\noindent Ud fra US tilknyttet planning, er nogle entities bestemt: Planning, Shift, UsersInPlanning, UsersShift og UserSwapShiftNotify. Disse skal udgøre tabellerne i databasen for planning. Hertil skal passende relationer bestemmes, så ledes, at en planning kan indeholde flere shifts, samt flere UsersInPlanning. UsersShift skal indeholde composite keys, bestående af UsersInPlanning id'er og Shift Id'er. 
+\\ \\ 
+UserSwapShiftNotify skal indeholde notifikationer for bytning af vagter mellem to brugere, hvortil passende attributer er blevet tilknyttet. Ud fra disse overvejelser er et ER-digram udarbejdet, som kan ses nedenfor på figur \ref{fig:ark_planning_data_dbview}.
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{09_Arkitektur/Planning/pictures/DB_Planning.jpg}
+  \caption{ER Diagram for plannings til Database strukturen. OneToMany relationer fra planning til både Shift og UsersInPlanning. OneToMany fra Shift til UsersShift, samt fra UsersInPlanning til UsersShift. Samme relation benyttet til UserSwapShiftNotify.}
+  \label{fig:ark_planning_data_dbview}
+\end{figure}
+
+\noindent Ud fra ER-diagrammet, er det muligt at designe modeller til planning.

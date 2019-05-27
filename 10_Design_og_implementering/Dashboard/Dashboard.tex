@@ -1,0 +1,9 @@
+\section{Dashboard}
+I dette afsnit præsenteres design og implementeringen af Dashboard.
+Da der dynamisk skal findes typerne til de forskellige widgets og inkludere dem i entity framework \cite{EF_core} for at få alt dataet fra en widget, laves der en funktion i repository kaldet "includeAll". Denne funktion bruger reflection namespacet \cite{Reflection} til dynamisk at inkludere alle de properties en widget har. Dette sker rekursivt, således at den også inkludere flere lag ned. Dvs. inkludere den widgets attributter og derefter attributens attributter. Denne funktion inkludere desuden også lister af elementer, det vil sige one-to-many relations, dog vil den ikke inkludere flere lag af lister , da dette gør funktionen eksponentielt langsommere. Hele implementeringen af includeAll kan findes i bilag \cite{DesignOgImplementationDashboard}. \\
+
+\noindent Dashboardet er implementeret med javascript og .net core. Javascriptet gør det muligt at kontakte andre controllere gennem AJAX og udskrive det data, som returneres i et popup. Dette skaber illusionen om, at alt foregår ved brug af ét enkelt view, men i realiteten er dashboard et led mellem, de controllere der tilhører forskellige typer af widgets og brugeren. \\
+
+\noindent Dashboardet består af en controller, et view og et view-component. Denne view component sørger for at udskrive de forskellige widgets, som tilhører en bestemt gruppe. Dette gøres ud fra et gruppe id. Denne funktionalitet er implementeret som view-component, da det gør det muligt at vises i andre funktionaliteter, hvis det er nødvendigt. Derudover har det, i modsætning til partial-views, tilknyttet en controller, hvilket passer bedre ind i MVC, da man eller ender med en masse C\# kode i sit partial view for at opnå samme resultat.
+
+\store{små rettelser.}

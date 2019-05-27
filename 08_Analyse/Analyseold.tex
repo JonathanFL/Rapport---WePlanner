@@ -1,0 +1,12 @@
+\chapter{Analyse}
+
+Der er et hav af værktøjer som kan bruges til at udvikle web applikationer. Der skal vælges nogle teknologier som er kompatible, og gerne nogle som gruppens medlemmer får kendskab til igennem undervisningen, da dette vil lette udviklings arbejdet. I de følgende afsnit argumenteres for hvilke teknologier der vælges.
+
+\section{Database}
+Valget af server faldt hurtigt på en SQL database, grundet det var det første, som blev introduceret i faget I4DAB\cite{DAB_Kursuskatalog}, samt at SQL udgjorde størstedelen af kurset. En anden mulighed kunne have været en NoSQL database (MongoDB), men da projektet ikke kunne vente på undervisningen i pensum, så faldt valget på en SQL database.
+
+Der ville have været både fordele og ulemper, hvis valget var endt anderledes. En af de vigtigste krav til databasen, var at den var kompatibel med EF core i VS. Dertil var begge databaser gode muligheder. Det vurderes at der vil hentes data oftere i forhold hvor tit der indsættes data. Hertil ville MongoDB give de bedste resultater, da det er muligt embedde entitites, hvormed læsetiden bliver hurtigere. Denne er også nemmere at skallere. Dog er en SQL database ikke et dårligt valg, men vil kunne komme til at blive for langsomt, hvis systemet fik mange brugere. 
+
+\section{Server-side framework, view-engine og database tilgang}
+
+

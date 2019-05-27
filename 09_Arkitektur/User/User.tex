@@ -1,0 +1,24 @@
+\section{User}
+
+På WePlanner kan man registrere sig og logge ind som bruger. User Stories for en bruger, og arkitekturen som bliver bygget på baggrund af disse userstories vil blive gennemgået i dette afsnit. Der vil blive gennemgået database arkitektur i Data View, samt den logiske arkitektur under Logical View.
+\newline 
+User Stories for User kan ses herunder:
+
+\begin{itemize}
+    \item Opret Bruger (I)
+    \item Log Ind (I)
+    \item Ændring af navn, password og e-mail (I)
+    \item Indstil profilbillede og personligt tema
+    \item Tilknyt Facebook Konto*
+\end{itemize}
+
+* Ikke implementeret \newline
+(I) Identity framework
+
+I .NET Frameworks MVC projekt, kan man vælge at bygge med Identity Framework, hvilket giver projektet registrering og login funktionalitet. Derfor blev dette valgt, eftersom det udfylder de 3 første userstories ovenfor. Disse userstories vil derfor ikke blive beskrevet i arkitekturafsnittet.
+
+User Storien "Opret gruppe", bliver beskrevet i Groups afsnittet, og vil derfor ikke blive beskrevet her.
+Derfor vil der kun blive beskrevet arkitekturen for usermodellen, samt indstilling af profilbillede.
+
+\input{09_Arkitektur/User/DataView.tex}
+\input{09_Arkitektur/User/LogicalView.tex}

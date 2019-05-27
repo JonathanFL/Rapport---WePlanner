@@ -1,0 +1,33 @@
+\chapter{Indledning} \label{cph:indledning}
+
+\noindent Når man bor i et bofællesskab, kommer der ofte mange bolde, som skal holdes i luften. Der er et fælles ansvar for bofællesskabet, som indebærer flere ting: Hvem skal rengøre huset, og hvornår skal det gøres? Hvem har vaskemaskinen kl 16? Er der en fælles madplan, og hvem er med i den? Kommer familien på besøg, eller er der fest i weekenden og mange andre ting der internt skal koordineres. For at hjælpe med at holde disse bolde i luften, udvikles WePlanner, som har til formål at optimere håndteringen af ovenstående problematikker i et bofællesskab.
+
+%Det er svært at koordinere med hinanden verbalt, da folk har travlt med deres hverdag, hurtigt glemmer beskeder og måske ikke ender med at få en besked ud til alle personer. På baggrund af dette har projektet til formål at optimere håndteringen af de ovenstående temaer.
+
+%\noindent I dette projekt er der derfor blevet gjort fokus på at lave en webapplikation til bofællesskaber, som vil være et centralt sted til at kommunikere, planlægge og strukturere dagligdagen for bofællesskabet. Dette projekt bliver kaldt for WePlanner.
+
+\section{Problemformulering}\label{sec:problemformulering}
+Med udgangpunkt i projektets formål er der i gruppen kommet frem til følgende problemformulering:
+\input{04_Indledning/Problemformulering.tex}
+
+\section{Produktbeskrivelse}
+\input{04_Indledning/Produktbeskrivelse.tex}
+\section{Prototype}
+Der er købt et domæne der har navnet: www.weplanner.dk. I bilag findes en brugervejledning til, hvordan der kan navigeres rundt i web-applikationen. \valdemar{Reference til bilag} Brugervejledningen indeholder også et demo-login for en bruger, der er med i nogle grupper. Dette skulle gerne give et eksempel på, hvordan det var tænkt at weplanner kunne anvendes i virkeligheden. 
+
+\section{Afgrænsninger}
+\input{04_Indledning/MoSCoW.tex}
+
+\section{Udviklingsværktøjer}
+
+\subsection{Microsoft Visual Studio}
+WePlanner gør brug af Microsoft Visual Studios \valdemar{reference} indbyggede MVC arkitektur for ASP.NET. Dette betyder at WePlanners filstrukturer er struktureret efter Models, Views og Controllers.
+
+\subsection{ASP.NET Core}
+WePlanners backend er implementeret i ASP.NET Core 2.2, som er platformsuafhængig. \valdemar{reference} 
+
+\subsubsection{Identity Framework}
+Identity Framework \valdemar{indsæt reference} tilføjes til projektet, der tilføjer funktionalitet der bla. gør det muligt at registrere brugere og logge ind, uden at dette skal implementeres selv.
+
+\subsection{Entity Framework Core}
+Entity Framework Core anvendes, da gruppen har erfaring med det fra faget I4DAB \cite{DAB}, samt fordi det ligesom ASP.NET Core, er platformsuafhængigt.

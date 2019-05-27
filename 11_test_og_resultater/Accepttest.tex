@@ -1,0 +1,26 @@
+\section{Accepttest}
+For at sikre at hjemmesiden lever op til de krav som blev stillet i starten af rapporten, laves der en accepttest. Accepttesten bliver lavet ud fra de US's som er lavet til hjemmesiden. Før en US er blev implementeret, blev den præciseret ved at skrive en acceptest til den i Gherking sproget. Et eksempel på dette kan ses på listing \ref{list_group_gherkin}.
+\\
+\begin{lstlisting}[caption=Acceptest af US "Tilføj administrator rettigheder" i Gherkin sproget,label=list_group_gherkin,language=Gherkin]
+Egenskab: Tilfoej administrator rettigheder til en bruger
+
+    Baggrund:
+        Givet at personen er administrator i gruppen
+        Og at personen er inde paa gruppens side
+        Og at brugeren som skal have administrator rettigheder er medlem af gruppen
+        Og at brugeren som skal have administrator rettigheder ikke allerede har det
+        
+        
+    Scenarie: Personen vil tilfoeje administrator rettigheder til et medlem af gruppen
+        Naar Personen vil tilfoeje administrator rettigheder til en bruger i gruppen
+        Saa navigerer personen til knappen "Edit group" paa gruppens side
+        Saa trykker personen paa knappen "Edit group"
+        Og personen navigeres til siden hvor alle gruppe indstillinger er
+        Saa navigerer personen til checkboksen "Admin" som er ud for brugeren navn.
+        Saa trykker personen paa checkboksen "Admin"
+        Saa navigerer personen til knappen "Save"
+        Saa trykker personen paa knappen "Save"
+        Og brugeren faar tildelt administrator rettigheder til gruppen.
+\end{lstlisting}
+
+Resten af accepttesten kan ses i bilagene. Accepttesten er blevet brugt til sidst for at verificerer at den enkelte US virker korrekt. Af de US's som er blevet gennemgået i hele rapporten, lever alle op til kravene i accepttesten. I bilagene kan der ses en succestabel, for alle implementerede US's.

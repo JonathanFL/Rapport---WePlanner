@@ -1,0 +1,42 @@
+\section{Prioritering af US's} \thomas{manglende referencer}
+\mini{Prioriteringsliste}
+\thomas{Noget om iterativt arbejde}
+I tabel \ref{tab:US_priotering} ses hvordan grupperingen af US's er blevet prioriteret. Prioriteringen er sket på baggrund af MoSCoW'en og US's afhængighed af hinanden. 
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{1.5in}|p{0.8in}|} \hline 
+        \textbf{US's gruppering} & \textbf{Prioritering} \\ \hline 
+        Bruger indstillinger & \multicolumn{1}{c|}{1} \\ \hline
+        Gruppe indstillinger & \multicolumn{1}{c|}{1} \\ \hline 
+        Kalender & \multicolumn{1}{c|}{2} \\ \hline 
+        Opslagstavle & \multicolumn{1}{c|}{2} \\ \hline 
+        Liste & \multicolumn{1}{c|}{2} \\ \hline 
+        Booking & \multicolumn{1}{c|}{3} \\ \hline 
+        Planlægning & \multicolumn{1}{c|}{3} \\ \hline 
+        Pinned Events & \multicolumn{1}{c|}{3} \\ \hline 
+        Betalinger & \multicolumn{1}{c|}{3} \\ \hline 
+    \end{tabular}
+    \caption{Prioritering af grupperingen af US. Her betegner 1 højest prioritet, 2 næst højeste og 3 laveste prioritet}
+    \label{tab:US_priotering}
+\end{table}
+
+Der er dog nogle undtagelser af US's der ikke prioriteres sammen med den overordnede gruppering. En tabel af disse kan ses på tabel \ref{tab:US_ikkeImplementeret}. Disse er ikke medtaget, da det vurderes at implementeringen af disse ikke er essentielt for funktionaliteten. 
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{1.5in}|p{1.2in}|} \hline 
+        \textbf{US} & \textbf{Fra gruppering} \\ \hline 
+        Tilføj/fjern gruppe & Opslagstavle \\ \hline
+        Tilføj/fravælg notifikationer & Gruppe-indstillinger \\ \hline 
+        Valg af tema/baggrund & Gruppe-indstillinger \\ \hline 
+    \end{tabular}
+    \caption{US's der ikke er prioriteret sammen med den overordnede gruppering}
+    \label{tab:US_ikkeImplementeret}
+\end{table}
+
+%For at sikre sig at alle målene under must haves, i den udarbejdede MoSCoW, bliver opfyldt, har det været nødvendigt at prioritere US's . Derudover har det også været vigtigt at prioritere US's, så der var bygget et godt fundament til applikationen, inden alt fyldet kom på. Af den grund bliver de mest relevante US's om bruger indstillinger fra afsnit \ref{tab:US_priotering} prioriteret højst. 
+
+%Herefter bliver US's for widgets inkluderet i WePlanner, så disse kan tages brug af brugere i grupper. Prioritering af widgets, tager udgangspunkt i MoSCoW for projektet, hvor US'es bliver implementeret for de prioriterede widgets.
+
+%Herefter kan de forskellige US's for widgets i afsnit \ref{ssec_US_widgets} bygges ovenpå, så de kan blive brugt i grupperne. Her bliver de forskellige US's prioriteret efter, hvilke der opfylder must haves i MoSCoW'en. De forskellige US's er delt ind i forskellige widgets, og derfor vælges det først hvilken widget der skal implementeres, og herefter forsøges det at implementere alle US's til denne widget. Dette er fordi det er nemmere at implementere en hel widget, imens man sidder i det, frem for at springe rundt i forskellige widgets.

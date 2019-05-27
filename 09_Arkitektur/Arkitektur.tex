@@ -1,0 +1,32 @@
+\chapter{Arkitektur} \label{chp:arkitektur}
+\valdemar{Lav ét overordnet afsnit der beskriver Deplyment view}
+Arkitekturen beskrives ved brug af N+1 View modellen. Disse views skal beskrive hvordan, kravene til funktionaliteten fra US's implementeres, set fra forskellige synspunkter. De anvendte views som vurderes at være relavante for projektet er:
+\begin{itemize}
+    \item Data View
+    \item Logical View
+    \item Deployment view
+\end{itemize}
+
+Data view beskriver applikationen set med fokus på data. Sagt med andre ord, hvordan data struktureres, på en sådan måde at det bliver muligt at implementere den ønskede funktionalitet.\valdemar{omformuleres}
+
+Logical view beskriver applikation set fra et logisk perspektiv - hvordan navigerer brugeren rundt i applikationen, samt hvordan de forskellige dele af siden skal bygges op. 
+
+Deployment view giver et overblik over fordelingen af applikationens softwareelementer, når den hostes. Dette view laves kun for hele systemet, og ikke for hver US/Widget da beskrivelsen af dette view er gennemgående for hele systemet.
+
+Data- og Logical view beskrives i rapporten for de 5 US's, som blev udvalgt i afsnit \ref{sec:US}. En kortere og overvejende reflekterende version af de resterende dele af applikationen, beskrives også i følgende afsnit. En grundig beskrivelse af Data og Logical view for gruppering af US's, kan findes i bilag under arkitektur afsnittet \cite{ArkitekturOverordnet}.
+
+Data viewet beskrives først, idet det også er her udviklingsprocessen starter når en US implementeres.
+
+\section{Generelle arkitekturbeslutninger}
+Det vurderes, at sider der ikke indeholder særligt meget information, bør blive vist i et pop-up vindue. Derved undgås at skifte for meget mellem views, som kan komme til at forvire brugeren. Et pop-up vindue kan til enhver tid lukkes. Når pop-up vinduet lukkes, foretages der ikke nogen interaktion med controlleren, og intet indhold bliver oprettet/redigeret eller slettet.
+
+\input{09_Arkitektur/User/User.tex}
+\input{09_Arkitektur/Groups/Groups.tex}
+\input{09_Arkitektur/Dashboard/Dashboard.tex}
+\input{09_Arkitektur/Booking/Booking.tex}
+\input{09_Arkitektur/Calendar/Calendar.tex}
+\input{09_Arkitektur/Lists/Lists.tex}
+\input{09_Arkitektur/Planning/Planning.tex}
+\input{09_Arkitektur/Payment/Payment.tex}
+\input{09_Arkitektur/Wall/Wall.tex}
+\input{09_Arkitektur/Generelt_Deployment/Deployment.tex}

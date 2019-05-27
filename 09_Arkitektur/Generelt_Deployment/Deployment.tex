@@ -1,0 +1,13 @@
+\section{Deployment view}
+I dette afsnit vil give et indblik til, hvordan softwaren er mappet til hardware, som i dette tilfælde vil være browsere, serveres og databaser. \\
+
+\noindent Efter gennemgang af Data view og Logical view for alle dele af WePlanner, samles det hele i et Deployment view. Deployment view er det view, som viser, hvordan helheden af et projekt bliver implementeret i forhold til alle komponeneter. På nedenstående figur \ref{fig:ark_deploy_deploymentdiagram} ses det, hvilke komponenter WePlanner består af.
+
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{09_Arkitektur/Generelt_Deployment/deploymentDiagram.jpg}
+  \centering
+  \caption{Deployment diagram for hele systemet. Her er 3 dele, hvor client er browseren, som en bruger benyttet. Application serveren og DB server bliver hostet fra Unoeuro til domænet weplanner.}
+  \label{fig:ark_deploy_deploymentdiagram}
+\end{figure}
+
+\noindent Som det kan ses på diagrammet, så er deployment delt op i 3 eksisterende stykker software, hvor koden kommer til at køre. Det første er client, som er browseren, hvori man tilgår webapplikationen. Browseren vil kommunikere med en web-/applikationsserver, hvor den egentlige sourcekode til planning er placeret. Denne server kommunikere sammen med browseren vha. en HTTP forbindelse. Webserveren indeholde så strukturen for mvc, plus wwwroot, som indeholder statisk kode, som f.eks. css og js filer, som views benytter. \\
